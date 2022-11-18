@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--dark-blue);
+    color: var(--light-cyan);
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.card {
+    background: var(--dark-grayish-blue);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    margin: 4rem auto;
+    border: 5px solid var(--light-cyan);
+    border-bottom-color: var(--neon-green);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.title {
+    color: var(--neon-green);
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+.content {
+    font-size: 24px;
+}
+
+.content article {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.divider span {
+    z-index: 2;
+    background-color: var(--dark-grayish-blue);
+    padding: 0 20px;
+}
+
+.divider .line {
+    height: 1px;
+    background: var(--grayish-blue);
+    margin-top: -25px;
+}
+
+.card button {
+    background-color: var(--neon-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-25px);
+    bottom: -25px;
+    cursor: pointer;
+}
+
+.card .diceBtn.active:hover {
+    box-shadow: 0 0 10px 5px var(--neon-green);
+    transition: all 0.3s;
+}
+
+.card .diceBtn.disabled {
+    cursor: not-allowed;
+}
+
+.card .diceBtn img {
+    width: 25px;
+    height: 25px;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+}
+
+.attribution a {
+    margin-left: 5px;
+    color: var(--neon-green);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    main {
+        display: grid;
+        place-items: center;
+        padding-top: 0;
+    }
+    .card {
+        padding: 4rem;
+    }
+    .spinner {
+        margin: 8rem auto;
+    }
+}
